@@ -4,12 +4,12 @@ export const NAV_ITEMS: NavItem[] = [
   {
     id: 1,
     label: "Product",
-    href: "/product",
+    href: "/",
   },
   {
     id: 2,
     label: "Pricing",
-    href: "/pricing",
+    href: "/",
   },
 ];
 
