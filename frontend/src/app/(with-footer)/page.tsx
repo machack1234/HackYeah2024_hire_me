@@ -40,7 +40,7 @@ export default function Home() {
           <ul className="flex py-8 gap-8">
             {TESTIMONIALS.map(({ id, content, author, avatar }) => (
               <li key={id}>
-                <p>{content}</p>
+                <p className="italic">{content}</p>
                 <div>
                   <NextImage
                     src={avatar}
