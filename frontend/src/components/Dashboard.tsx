@@ -8,7 +8,7 @@ export default function Dashboard() {
 	const handleTaskCompletion = day => {
 		setCompletedTasks(prevCompleted => ({
 			...prevCompleted,
-			[day]: !prevCompleted[day], // Toggle task completion
+			[day]: !prevCompleted[day],
 		}));
 	};
 
