@@ -37,7 +37,7 @@ export default function Home() {
           <h3 className="max-w-sm">
             Learn at your own pace with lessons tailored to you
           </h3>
-          <ul className="flex py-8">
+          <ul className="flex py-8 gap-8">
             {TESTIMONIALS.map(({ id, content, author, avatar }) => (
               <li key={id}>
                 <p>{content}</p>

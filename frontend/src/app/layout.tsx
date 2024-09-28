@@ -37,7 +37,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased text-primary-foreground max-w-7xl md:container mx-auto`}
         >
           <header className="w-full flex justify-between py-8">
-            <figure>
+            <figure className="flex items-center">
               <NextImage
                 src="/images/brand-logo.svg"
                 width={132}
@@ -64,14 +64,11 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <ButtonLink href="/get-started" variant="primary">
-                    Get started
-                  </ButtonLink>
                   <Link
                     href="/get-started"
                     className={`${buttonVariants({
                       variant: "default",
-                    })} bg-primary text-primary-foreground`}
+                    })} bg-primary text-primary-foreground hover:bg-primary/80`}
                   >
                     Get started
                   </Link>
@@ -84,12 +81,12 @@ export default function RootLayout({
             <div className="container mx-auto max-w-7xl">
               <section className="flex justify-between pb-12">
                 <section className="flex flex-col gap-8">
-                  {/* <NextImage
-                    src="/images/LOGO.svg"
+                  <NextImage
+                    src="/images/brand-logo.svg"
                     alt="AVA logo"
                     width={55}
                     height={16}
-                  /> */}
+                  />
                   <address>
                     <p className="font-bold">Kontakt:</p>
                     <Link href="mailto:support@ai-shopping-assistant.com">
