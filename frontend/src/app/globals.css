@@ -29,3 +29,8 @@ h3 {
   @apply text-2xl;
   @apply font-bold;
 }
+
+h4 {
+  @apply text-xl;
+  @apply font-bold;
+}

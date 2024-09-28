@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      spacing: {
+        "header-height": "100px",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

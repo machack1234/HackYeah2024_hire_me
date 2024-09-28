@@ -2,7 +2,7 @@ import { NAV_ITEMS } from "@/constants";
 import NextImage from "next/image";
 import Link from "next/link";
 
-export default function LayoutWithNavigation({
+export default function LayoutWithFooter({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -22,8 +22,8 @@ export default function LayoutWithNavigation({
               />
               <address>
                 <p className="font-bold">Kontakt:</p>
-                <Link href="mailto:support@ai-shopping-assistant.com">
-                  support@ai-shopping-assistant.com
+                <Link href="mailto:support@gethired.com">
+                  support@gethired.com
                 </Link>
               </address>
             </section>
