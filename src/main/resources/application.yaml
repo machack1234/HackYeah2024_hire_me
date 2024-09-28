@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hire_me_db
+    username: hire_me
+    password: IsThisReallySecret
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none   # 'none' to avoid schema creation if tables already exist
+    show-sql: true     # shows SQL queries in logs
+
+
