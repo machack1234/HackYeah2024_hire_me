@@ -1,18 +1,19 @@
 CREATE TABLE app_user(
     ID serial PRIMARY KEY, 
-    name varchar(100),
-    surname varchar(100),
-    age int,
-    phone text
 );
+
+CREATE TABLE course(
+   ID serial PRIMARY KEY,
+   Description VARCHAR(255)
+)
 
 CREATE TABLE task(
     ID serial PRIMARY KEY,
     Description VARCHAR,
-    SUBJECT int    
 );
 
 CREATE TABLE task_longer_description(
+    task_id integer references task,
     Description text,
 );
 
@@ -30,6 +31,7 @@ SELECT GENERATE_SERIES(
 CREATE TABLE user_task(
      user_id integer references app_user,
      task_id integer references task,
+     course_id integer references course,
      date DATE references date_series(date_field),
-     primary key(user_id, task_id, date)
+     primary key(user_id, task_id, course_id, date)
 );
