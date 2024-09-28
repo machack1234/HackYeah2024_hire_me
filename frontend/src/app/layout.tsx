@@ -36,51 +36,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased text-primary-foreground max-w-7xl md:container mx-auto`}
         >
-          <header className="w-full flex justify-between h-header-height">
-            <figure className="flex items-center">
-              <Link href="/">
-                <NextImage
-                  src="/images/brand-logo.svg"
-                  width={132}
-                  height={32}
-                  alt="get_hired logo"
-                />
-              </Link>
-              <h1 className="sr-only">get_hired</h1>
-            </figure>
-            <nav className="flex gap-8 justify-between items-center">
-              <ul className="flex gap-4">
-                {NAV_ITEMS.map(({ id, label, href }) => (
-                  <li key={id}>
-                    <Link href={href}>{label}</Link>
-                  </li>
-                ))}
-              </ul>
-              <ul className="flex gap-4">
-                <li className="">
-                  <Link
-                    href="/sign-in"
-                    className={`${buttonVariants({
-                      variant: "outline",
-                    })} !border-primary-foreground !font-bold`}
-                  >
-                    Log in
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/start-new-course"
-                    className={`${buttonVariants({
-                      variant: "default",
-                    })} bg-primary text-primary-foreground hover:bg-primary/80 !font-bold`}
-                  >
-                    Get started
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          <div className="-mt-header-height">{children}</div>
+          {children}
         </body>
       </html>
     </ClerkProvider>

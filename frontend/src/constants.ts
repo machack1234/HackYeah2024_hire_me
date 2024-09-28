@@ -13,6 +13,29 @@ export const NAV_ITEMS: NavItem[] = [
   },
 ];
 
+export const NAV_ITEMS_DASHBOARD: NavItem[] = [
+  {
+    id: 1,
+    label: "Home",
+    href: "/dashboard",
+  },
+  {
+    id: 2,
+    label: "Courses",
+    href: "/dashboard/courses",
+  },
+  {
+    id: 3,
+    label: "Progress",
+    href: "/dashboard",
+  },
+  {
+    id: 4,
+    label: "Settings",
+    href: "/dashboard",
+  },
+];
+
 export const NAV_ITEMS_CTA: NavItem[] = [
   {
     id: 1,
@@ -62,5 +85,36 @@ export const FEATURES: FeatureItem[] = [
     id: 3,
     title: "Progress tracking ",
     desc: "Follow the plan at your own pace, track your progress, and complete practical tasks. You'll receive ongoing guidance, new course recommendations, and insights to help you unlock new opportunities in your chosen field.",
+  },
+];
+
+export const COURSES = [
+  {
+    id: 1,
+    title: "UX Design Foundations",
+    desc: "Objective: Introduce basic concepts and tools of UX/UI design.",
+    lessons: [
+      {
+        id: 1,
+        title: "Getting started with UX Design",
+        desc: "Discover the basics, such as key principles and methodologies.",
+        estimated_time: 60,
+        isDone: true,
+      },
+      {
+        id: 2,
+        title: "Devices and layouts",
+        desc: "Discover how to design for various devices.",
+        estimated_time: 80,
+        isDone: false,
+      },
+      {
+        id: 3,
+        title: "User research",
+        desc: "Discover the methodologies of user research.",
+        estimated_time: 60,
+        isDone: false,
+      },
+    ],
   },
 ];
