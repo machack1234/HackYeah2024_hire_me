@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
   try {
     const { data } = await req.json();
 
-    console.log("[Generate-course] Generating the course...");
+
     const { object } = await generateObject({
       model: openai("gpt-4o-mini"),
       schema: z.object({
