@@ -23,6 +23,11 @@ services:
       - "8080:8080"
     networks:
       - hiremenetwork
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/hire_me_db
+#      - SPRING_DATASOURCE_USERNAME=hire_me
+#      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
 volumes:
   postgres_data:
