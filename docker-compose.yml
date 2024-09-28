@@ -1,20 +1,23 @@
 
 
 services:
-  app:
-    build:
-      context: .
-    depends_on:
-      - postgres
-    ports:
-      - "8080:8080"
-    networks:
-      - hiremenetwork
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/hire_me_db
-      - SPRING_DATASOURCE_USERNAME=hire_me
-      - SPRING_DATASOURCE_PASSWORD=IsThisReallySecretIDontThinkSoLol
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#  app:
+#    build:
+#      context: .
+#    depends_on:
+#      - postgres
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - hiremenetwork
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/hire_me_db
+#      - SPRING_DATASOURCE_USERNAME=hire_me
+#      - SPRING_DATASOURCE_PASSWORD=IsThisReallySecretIDontThinkSoLol
+#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#      - SPRING_JPA_SHOW_SQL=true
+
+
 
   postgres:
     image: postgres:14-alpine

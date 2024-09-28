@@ -1,18 +1,7 @@
-<<<<<<< Updated upstream
-//package com.hire_me.chat.Repository;
-//
-//import com.hire_me.chat.Entity.Course;
-//import org.springframework.data.repository.CrudRepository;
-//
-//public interface CourseRepo extends CrudRepository<Integer, Course> {
-//}
-=======
 package com.hire_me.chat.Repository;
 
 import com.hire_me.chat.Entity.Course;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CourseRepo extends CrudRepository<Course, Integer> {
+public interface CourseRepo extends JpaRepository<Course,Integer> {
 }
->>>>>>> Stashed changes
-

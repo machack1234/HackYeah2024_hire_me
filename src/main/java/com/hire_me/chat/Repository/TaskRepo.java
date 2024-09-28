@@ -1,13 +1,7 @@
 package com.hire_me.chat.Repository;
 
-import com.hire_me.chat.Entity.Task;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.scheduling.config.Task;
 
-<<<<<<< Updated upstream
-//public interface Task extends CrudRepository<Integer, Task> {
-//}
-=======
-public interface Task extends CrudRepository<Task, Integer> {
+public interface TaskRepo extends JpaRepository<Task,Integer> {
 }
->>>>>>> Stashed changes
-
