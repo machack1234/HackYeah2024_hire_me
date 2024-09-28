@@ -15,6 +15,8 @@ public class AppUser {
     @Id
     Integer Id;
 
+    String name;
+
 
 
 
