@@ -1,4 +1,4 @@
-package com.hire_us.chat;
+package com.hire_me.chat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.hire_us.chat;
+package com.hire_me.chat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

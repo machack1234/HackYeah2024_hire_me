@@ -5,15 +5,21 @@ services:
       - 5432:5432
     volumes:
       - ./docker/postgres/postgres_data:/var/lib/postgresql/data
-      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+        #      - ./docker/postgres/init:/docker-entrypoint-initdb.d
     environment:
-      - POSTGRES_PASSWORD=IsThisReallySecret
+      - POSTGRES_PASSWORD=IsThisReallySecretIDontThinkSoLol
       - POSTGRES_USER=hire_me
       - POSTGRES_DB=hire_me_db
     networks:
       - hiremenetwork
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "hire_me", "-d", "hire_me_db"]
+  app:
+    build:
+      context: .
+
+    ports:
+      - "8080:8080"
 
 volumes:
   postgres_data:
