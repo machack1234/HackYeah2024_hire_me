@@ -2,10 +2,20 @@
 import { WEEK_PLAN } from '@/constants/week';
 import React, { useState } from 'react';
 
-export default function Dashboard() {
-	const [completedTasks, setCompletedTasks] = useState({});
+type WeekPlanType = {
+	[key: string]: {
+		Task: string;
+		'Day description'?: string; // Dostosowanie do istniejącej struktury
+		'Estimated time to complete'?: string;
+		dayDescription?: string;
+		estimatedTime?: string;
+	};
+};
 
-	const handleTaskCompletion = day => {
+export default function Dashboard() {
+	const [completedTasks, setCompletedTasks] = useState<{ [key: string]: boolean }>({});
+
+	const handleTaskCompletion = (day: string) => {
 		setCompletedTasks(prevCompleted => ({
 			...prevCompleted,
 			[day]: !prevCompleted[day],
@@ -17,7 +27,7 @@ export default function Dashboard() {
 			<h1 className='text-2xl font-bold mb-6'>Weekly Learning Plan</h1>
 			<ul className='space-y-4'>
 				{Object.keys(WEEK_PLAN).map(day => {
-					const task = WEEK_PLAN[day];
+					const task = (WEEK_PLAN as WeekPlanType)[day]; // Rzutowanie na poprawny typ
 					const isCompleted = completedTasks[day];
 
 					return (
@@ -35,9 +45,11 @@ export default function Dashboard() {
 							<div>
 								<strong className='mr-2'>{day}:</strong>
 								<span>
-									{task.Task} - {task.DayDescription}
+									{task.Task} - {task['Day description'] || task.dayDescription}
 								</span>
-								<span className='text-sm text-gray-400'>({task.EstimatedTime})</span>
+								<span className='text-sm text-gray-400'>
+									({task['Estimated time to complete'] || task.estimatedTime})
+								</span>
 							</div>
 						</li>
 					);

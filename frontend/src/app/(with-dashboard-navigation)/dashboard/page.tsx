@@ -1,10 +1,10 @@
 "use client";
 
-import Dashboard from "@/components/Dashboard";
+
 import { Stats } from "@/components/dashboard/Stats";
 import { buttonVariants } from "@/components/ui/button";
-import { UserButton, useUser } from "@clerk/nextjs";
-import { ArrowRight, Rocket, Sprout, Zap } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function DashboardPage() {
@@ -28,7 +28,7 @@ export default function DashboardPage() {
                 variant: "default",
               })} bg-primary text-primary-foreground hover:bg-primary/80 w-fit !font-bold`}
             >
-              Get started <ArrowRight size={16} />
+              Create new course <ArrowRight size={16} />
             </Link>
           </div>
         </article>

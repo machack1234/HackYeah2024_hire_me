@@ -4,12 +4,12 @@ export const NAV_ITEMS: NavItem[] = [
   {
     id: 1,
     label: "Product",
-    href: "/",
+    href: "",
   },
   {
     id: 2,
     label: "Pricing",
-    href: "/",
+    href: "",
   },
 ];
 
@@ -24,16 +24,7 @@ export const NAV_ITEMS_DASHBOARD: NavItem[] = [
     label: "Courses",
     href: "/dashboard/courses",
   },
-  {
-    id: 3,
-    label: "Progress",
-    href: "/dashboard",
-  },
-  {
-    id: 4,
-    label: "Settings",
-    href: "/dashboard",
-  },
+
 ];
 
 export const NAV_ITEMS_CTA: NavItem[] = [

@@ -8,7 +8,7 @@ type ButtonAsChildProps = {
   variant?: string;
 };
 
-export function ButtonAsChild({ href, label, variant }: ButtonAsChildProps) {
+export function ButtonAsChild({ href, label }: ButtonAsChildProps) {
   return (
     <Button asChild>
       <Link href={href}>{label}</Link>
