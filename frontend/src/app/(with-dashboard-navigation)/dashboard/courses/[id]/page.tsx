@@ -28,8 +28,8 @@ type CoursePageParams = {
 
 export default function CoursePage({ params }: { params: CoursePageParams }) {
 	const [course, setCourse] = useState<Course | null>(null);
-	const [isModalOpen, setIsModalOpen] = useState<boolean>(false); 
-	const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null); 
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+	const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
 
 	useEffect(() => {
 		const storedCourses = localStorage.getItem('courses');
@@ -138,26 +138,30 @@ export default function CoursePage({ params }: { params: CoursePageParams }) {
 			<ul className='py-20 flex flex-col gap-8'>
 				{lessons?.map(({ id, title, desc, estimated_time, isDone, detailed_desc }: Lesson, index: number) => (
 					<li
-						style={{
-							boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
-						}}
-						className='border-2 p-4 cursor-pointer rounded-lg border-lime-200'
+						style={
+							{
+								// boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
+							}
+						}
+						className='border-1 border-primary p-4 cursor-pointer '
 						key={id}>
 						<header>
 							<div className='flex gap-4 mb-2'>
 								<p className='text-xl font-semibold text-gray-500'>Lesson {index + 1}</p>
-								{isDone ? (
-									<button
-										onClick={() => handleLessonStatusChange(id, isDone)}
-										className='bg-lime-500 text-white px-4 py-2 rounded-md hover:bg-lime-600 transition'>
-										Done
-									</button>
-								) : isPreviousLessonDone(index) ? (
-									<button
-										onClick={() => handleLessonStatusChange(id, isDone)}
-										className='bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition'>
-										Mark as Done
-									</button>
+								{isPreviousLessonDone(index) ? (
+									<div className='flex items-center'>
+										<input
+											type='checkbox'
+											checked={isDone}
+											onChange={() => handleLessonStatusChange(id, isDone)}
+											className={`mr-2 h-5 w-5 transition-colors duration-300 border-2 rounded ${
+												isDone ? 'bg-lime-500 border-lime-500' : 'bg-white border-gray-300'
+											} focus:ring-lime-500 focus:ring-opacity-50 checked:accent-primary`}
+										/>
+										<span className={`${isDone ? 'text-black' : 'text-gray-500'}`}>
+											{isDone ? 'Done' : 'Mark as Done'}
+										</span>
+									</div>
 								) : (
 									<Badge
 										className={`${badgeVariants({
@@ -167,6 +171,7 @@ export default function CoursePage({ params }: { params: CoursePageParams }) {
 									</Badge>
 								)}
 							</div>
+
 							<h3>{title}</h3>
 						</header>
 						<p>{desc}</p>
@@ -177,19 +182,18 @@ export default function CoursePage({ params }: { params: CoursePageParams }) {
 
 						<button
 							onClick={() => openModal({ id, title, desc, estimated_time, isDone, detailed_desc })}
-							className='mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition'>
+							className={`${buttonVariants({ variant: 'outline' })} border-1 border-black mt-4`}>
 							Show details
 						</button>
 					</li>
 				))}
 			</ul>
 
-
 			{isModalOpen && selectedLesson && (
 				<div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
 					<div className='bg-white p-6 rounded-lg max-w-md mx-auto'>
 						<h2 className='text-2xl mb-4'>{selectedLesson.title} - Details</h2>
-						<p>{selectedLesson.detailed_desc}</p> 
+						<p>{selectedLesson.detailed_desc}</p>
 						<div className='flex justify-end mt-6'>
 							<button
 								onClick={closeModal}

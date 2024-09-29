@@ -16,7 +16,7 @@ export default function LayoutWithDashboardNavigation({
 
 	return (
 		<>
-			<header className='w-full flex justify-between h-header-height relative z-50 bg-white'>
+			<header className='w-full flex justify-between h-header-height relative z-50  bg-white'>
 				<figure className='flex items-center'>
 					<Link href='/dashboard'>
 						<NextImage
@@ -33,7 +33,7 @@ export default function LayoutWithDashboardNavigation({
 						{NAV_ITEMS_DASHBOARD.map(({ id, label, href }) => (
 							<li
 								key={id}
-								className={`hover:text-black ${pathname === href ? 'bg-primary p-1 rounded-lg font-bold' : 'text-gray-500'}`}>
+								className={`hover:text-black ${pathname === href ? ' p-1 rounded-lg font-bold' : 'text-gray-500'}`}>
 								{' '}
 
 								<Link href={href}>{label}</Link>
@@ -52,7 +52,7 @@ export default function LayoutWithDashboardNavigation({
 					<UserButton />
 				</nav>
 			</header>
-			<div className='-mt-header-height'>{children}</div>
+			<div className='-mt-header-height '>{children}</div>
 		</>
 	);
 }

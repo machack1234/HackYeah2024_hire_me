@@ -43,7 +43,7 @@ export default function LayoutWithFooter({
             </li>
             <li>
               <Link
-                href="/dashboard/start-new-course"
+                href="/dashboard"
                 className={`${buttonVariants({
                   variant: "default",
                 })} bg-primary text-primary-foreground hover:bg-primary/80 !font-bold`}

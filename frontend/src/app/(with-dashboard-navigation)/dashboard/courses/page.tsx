@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-
 type Course = {
 	id: number;
 	title: string;
@@ -13,7 +12,7 @@ type Course = {
 };
 
 export default function CoursesPage() {
-	const [courses, setCourses] = useState<Course[]>([]); 
+	const [courses, setCourses] = useState<Course[]>([]);
 
 	useEffect(() => {
 		const storedCourses = localStorage.getItem('courses');
@@ -23,23 +22,24 @@ export default function CoursesPage() {
 	}, []);
 
 	return (
-		<div className='flex flex-col gap-20'>
+		<div className='flex flex-col gap-20 pb-20'>
 			<section className='flex justify-between pt-40'>
 				<article className='basis-1/2 max-w-sm flex flex-col gap-4'>
 					<h2>Your courses</h2>
 				</article>
 			</section>
-			<ul className='flex flex-col gap-4'>
+			<ul className='flex flex-col gap-[60px] max-w-2xl'>
 				{courses.length > 0 ? (
 					courses.map(({ id, title, desc }: Course) => (
 						<li
-							style={{
-								boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
-							}}
-							className='border-2 p-4 rounded-lg border-lime-200' key={id}>
-							<Link href={`/dashboard/courses/${id}`}>
-								<h3>{title}</h3>
-								<p>{desc}</p>
+							className='border-2 border-black/10 p-6 rounded-lg'
+							key={id}>
+							<h3>{title}</h3>
+							<p>{desc}</p>
+							<Link
+								className={`${buttonVariants({ variant: 'outline' })} border-1 border-black mt-4`}
+								href={`/dashboard/courses/${id}`}>
+								Start the course
 							</Link>
 						</li>
 					))
