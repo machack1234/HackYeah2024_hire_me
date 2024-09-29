@@ -18,7 +18,7 @@ export default function Home() {
             perfectly tailored career development path.
           </p>
           <Link
-            href="/start-new-course"
+            href="/dashboard/start-new-course"
             className={`${buttonVariants({
               variant: "default",
             })} bg-primary text-primary-foreground hover:bg-primary/80 w-fit !font-bold`}

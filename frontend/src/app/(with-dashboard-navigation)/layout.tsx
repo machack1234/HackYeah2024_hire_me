@@ -1,17 +1,16 @@
-import { buttonVariants } from "@/components/ui/button";
-import { NAV_ITEMS, NAV_ITEMS_DASHBOARD } from "@/constants";
+import { NAV_ITEMS_DASHBOARD } from "@/constants";
 import { UserButton } from "@clerk/nextjs";
 import NextImage from "next/image";
 import Link from "next/link";
 
-export default function LayoutWithFooter({
+export default function LayoutWithDashboardNavigation({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <>
-      <header className="w-full flex justify-between h-header-height">
+      <header className="w-full flex justify-between h-header-height relative z-50 bg-white">
         <figure className="flex items-center">
           <Link href="/dashboard">
             <NextImage

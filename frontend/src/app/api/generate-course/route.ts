@@ -3,28 +3,40 @@ import { z } from "zod";
 import { generateObject } from "ai";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
-  try {
-    const { data } = await req.json();
+const generateRandomId = () => {
+  return Math.floor(Math.random() * 1000000); // Generate random number (6 digits)
+};
 
+export async function POST(req: NextRequest) {
+  console.log("[Generate-course] Generating the course...");
+  try {
+    const { context } = await req.json();
 
     const { object } = await generateObject({
       model: openai("gpt-4o-mini"),
       schema: z.object({
-        data: z
-          .object({
-            subject: z.string(),
-              lessons: z.object({
-                  content: z.string(),
-
+        data: z.object({
+          id: z.number(),
+          title: z.string(),
+          desc: z.string(),
+          lessons: z
+            .object({
+              id: z.number(),
+              title: z.string(),
+              desc: z.string(),
+              estimated_time: z.number().describe("estimated time in minutes"),
+              isDone: z.boolean(),
             })
-          })
+            .array(),
+        }),
       }),
-      system: "",
-      prompt: `Generate the course basing on the context: ${data}`,
+      system: "Generate the course basing on the provided context",
+      prompt: `Context: ${context}`,
     });
 
     const aiResult = object.data;
+    aiResult.id = generateRandomId();
+
     console.log("[Generate-course] Course generated.");
 
     return NextResponse.json({ answer: aiResult });
