@@ -148,14 +148,14 @@ export default function Chat() {
 
 			{courseGenerated ? (
 				<Link href='/dashboard/courses'>
-					<button className='bg-primary p-4 px-4 rounded-md hover:bg-primary/80 focus:ring-2 focus:ring-indigo-500 cursor-pointer focus:outline-none text-primary-foreground'>
+					<button className=' bg-primary p-4 px-4 rounded-md hover:bg-primary/80 focus:ring-2 focus:ring-indigo-500 cursor-pointer focus:outline-none text-primary-foreground'>
 						Go to Courses
 					</button>
 				</Link>
 			) : loading ? (
 				<div className='flex justify-center items-center'>
 					<svg
-						className='animate-spin h-8 w-8 text-primary'
+						className='animate-spin h-8 w-8 text-black'
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
 						viewBox='0 0 24 24'>
